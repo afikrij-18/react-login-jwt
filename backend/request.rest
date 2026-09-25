@@ -1,0 +1,12 @@
+##LOGIN
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "fikri@email.com",
+  "password": "rahasia123"
+}
+
+### GET PROFILE / TOKEN TEST
+GET http://localhost:3000/api/auth/me
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzkwMzI5MjQ2LCJleHAiOjE3OTAzMzI4NDZ9._f1-VNuUffhEs61dKpYFUMXShtvo7lkJGxCLawidYSg
