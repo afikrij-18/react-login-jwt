@@ -56,5 +56,5 @@ Profile.belongsTo(User, { foreignKey: "userId" });
 export default Profile;
 
 // (async () => {
-//   await db.sync();
+//   await db.sync({ alter : true });
 // })();

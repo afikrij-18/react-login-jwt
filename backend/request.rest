@@ -9,7 +9,7 @@ Content-Type: application/json
 
 ### GET PROFILE / TOKEN TEST
 GET http://localhost:3000/api/auth/me
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTEsImlhdCI6MTc5MDU4NjA0MCwiZXhwIjoxNzkwNTg5NjQwfQ.yoQcAO6-RxjfTSwFOzOzoN4YDT2pJVVNXWWB_AEqjkQ
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTEsImlhdCI6MTc5MDU4NjkxOSwiZXhwIjoxNzkwNTkwNTE5fQ.O6wdXPzvwjkPAc4nN-AAHa5PajiyEnghLysOKvJFEvI
 
 ###REGISTER USER BARU
 POST http://localhost:3000/api/auth/register
@@ -24,8 +24,7 @@ Content-Type : application/json
 
 ###menambahkan profil
 POST http://localhost:3000/api/profile
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTEsImlhdCI6MTc5MDU4NjQxOCwiZXhwIjoxNzkwNTkwMDE4fQ.APO7sjtXTKUHGGKsdAzb3Ao4OX_FW93pcX5_yR3SiDc
-
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTEsImlhdCI6MTc5MDU4NzEyOSwiZXhwIjoxNzkwNTkwNzI5fQ.I0PFCpoLMozDjxDjUa7ifSSko_zs_sRvSQklWwiSXEc
 Content-Type: application/json
 
 {
