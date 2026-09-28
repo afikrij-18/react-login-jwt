@@ -2,6 +2,8 @@ import express from "express";
 import cors from "cors";
 import db from "./config/database.js";
 import authRoute from "./routes/authRoute.js";
+import "./models/Profile.js"
+import profileRoutes from "./routes/profileRoutes.js"
 
 const app = express();
 const PORT = 3000;
@@ -12,6 +14,7 @@ app.use(
   }),
 );
 app.use(express.json());
+app.use("/api/profile", profileRoutes);
 
 app.get("/", (req, res) => {
   res.json({ message: "API Login JWT aktif" });

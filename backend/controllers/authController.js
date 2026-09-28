@@ -62,11 +62,57 @@ export const getMe = async (req, res) => {
       });
     }
 
-    return res.status(200).json({ data:user });
+    return res.status(200).json({ data: user });
   } catch (error) {
     console.error(error);
     return res.status(500).json({
       message: "Terjadi kesalahan pada server",
-    })
+    });
   }
-}
+};
+
+export const register = async (req, res) => {
+  try {
+    const { nama, email, password } = req.body;
+
+    // Validasi input: Memastikan semua field terisi
+    if (!nama || !email || !password) {
+      return res.status(400).json({
+        message: "Nama, email dna password wajib diisi",
+      });
+    }
+
+    //periksa apakah email sudah terdaftar di database
+    const existingUser = await User.findOne({ where: { email } });
+    if (existingUser) {
+      return res.status(400).json({
+        message: "Email sudah terdaftar, gunakan email lain",
+      });
+    }
+
+    // hash password sebelum disimpan ke database
+    const saltRounds = 10;
+    const hashedPassword = await bcrypt.hash(password, saltRounds);
+
+    // simpan user baru ke database menggunakan sequelize
+    const newUser = await User.create({
+      nama,
+      email,
+      password: hashedPassword,
+    });
+    return res.status(201).json({
+      message: "Register berhasil",
+      user: {
+        id: newUser.id,
+        nama: newUser.nama,
+        email: newUser.email,
+      },
+    });
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({
+      message: "Terjadi kesalahan pada server",
+      error: error.message,
+    });
+  }
+};

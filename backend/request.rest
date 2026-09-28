@@ -3,10 +3,34 @@ POST http://localhost:3000/api/auth/login
 Content-Type: application/json
 
 {
-  "email": "fikri@email.com",
-  "password": "rahasia123"
+  "email": "abc@email.com",
+  "password": "123456"
 }
 
 ### GET PROFILE / TOKEN TEST
 GET http://localhost:3000/api/auth/me
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzkwMzI5MjQ2LCJleHAiOjE3OTAzMzI4NDZ9._f1-VNuUffhEs61dKpYFUMXShtvo7lkJGxCLawidYSg
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTEsImlhdCI6MTc5MDU4NjA0MCwiZXhwIjoxNzkwNTg5NjQwfQ.yoQcAO6-RxjfTSwFOzOzoN4YDT2pJVVNXWWB_AEqjkQ
+
+###REGISTER USER BARU
+POST http://localhost:3000/api/auth/register
+Content-Type : application/json
+
+{
+  "nama" : "zikri",
+  "email": "zikri@email.com",
+  "password": "zikri123"
+}
+
+
+###menambahkan profil
+POST http://localhost:3000/api/profile
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTEsImlhdCI6MTc5MDU4NjQxOCwiZXhwIjoxNzkwNTkwMDE4fQ.APO7sjtXTKUHGGKsdAzb3Ao4OX_FW93pcX5_yR3SiDc
+
+Content-Type: application/json
+
+{
+  "bio": "Halo, saya sedang belajar membuat fitur About Me.",
+  "pendidikan": "S1 Ilmu Komputer",
+  "hobi": "Ngoding dan Olahraga",
+  "kontak": "08123456789"
+}
